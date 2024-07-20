@@ -1,0 +1,55 @@
+import { Component, OnInit } from '@angular/core';
+import { area } from 'src/app/interfaces/user';
+import { DataService } from '../../services/data.service';
+
+@Component({
+  selector: 'app-area',
+  templateUrl: './area.component.html',
+  styleUrls: ['./area.component.css']
+})
+export class AreaComponent implements OnInit {
+
+  TUser: any = [];
+  user: area = {
+    cod_area: null,
+    area: null,
+  }
+
+  constructor(private Data: DataService) { }
+
+  ngOnInit(): void {
+    this.getUser();
+  }
+
+  getUser() {
+    this.Data.getAll('/area')
+      .subscribe({
+        next: (res) => {
+          this.TUser = res;
+        },
+        error: (err) => console.error(err)
+      });
+  }
+
+  AgregarValor() {
+    delete this.user.cod_area;
+    this.Data.save(this.user, '/area')
+      .subscribe({
+        next: (res) => {
+          this.getUser();
+        },
+        error: (err) => console.error(err)
+      });
+  }
+
+  EliminarData(id: number) {
+    this.Data.delete(id, '/area')
+      .subscribe({
+        next: (res) => {
+          this.getUser();
+        },
+        error: (err) => console.error(err)
+      });
+  }
+
+}

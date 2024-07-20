@@ -14,6 +14,8 @@ import { TipolibroComponent } from './components/tipolibro/tipolibro.component';
 import { TipolibroEditComponent } from './components/tipolibro-edit/tipolibro-edit.component';
 import { LibroComponent } from './components/libro/libro.component';
 import { LibroEditComponent } from './components/libro-edit/libro-edit.component';
+import { AreaComponent } from './components/area/area.component';
+import { AreaEditComponent } from './components/area-edit/area-edit.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { LibroEditComponent } from './components/libro-edit/libro-edit.component
     TipolibroComponent,
     TipolibroEditComponent,
     LibroComponent,
-    LibroEditComponent
+    LibroEditComponent,
+    AreaComponent,
+    AreaEditComponent
   ],
   imports: [
     BrowserModule,
