@@ -1,0 +1,34 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand ps-3">LIBRO</a>
+</nav>
+
+<div class="row mt-5">
+    <div class="card">
+        <div class="card-body">
+            <form action="">
+                
+                <div class="form-group">
+                    <label for="" class="control-label" hidden>Registro No.</label>
+                    <input type="text" readonly="readonly" [(ngModel)]="user.cod_libroarea" name="cod_libroarea" placeholder="No"
+                        class="form-control" required hidden>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="control-label">LIBRO</label>
+                    <input type="text" [(ngModel)]="user.cod_libro" name="cod_libro" placeholder="DIGITE EL LIBRO"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">AREA</label>
+                    <input type="text" [(ngModel)]="user.cod_area" name="cod_area" placeholder="DIGITE EL AREA"
+                        class="form-control" autofocus>
+                </div>
+
+                <button class="btn btn-success btn-block mt-3" (click)="updateUser()">
+                    Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

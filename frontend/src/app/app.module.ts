@@ -16,6 +16,10 @@ import { LibroComponent } from './components/libro/libro.component';
 import { LibroEditComponent } from './components/libro-edit/libro-edit.component';
 import { AreaComponent } from './components/area/area.component';
 import { AreaEditComponent } from './components/area-edit/area-edit.component';
+import { AutorComponent } from './components/autor/autor.component';
+import { AutorEditComponent } from './components/autor-edit/autor-edit.component';
+import { LibrosporareaComponent } from './components/librosporarea/librosporarea.component';
+import { LibrosporareaEditComponent } from './components/librosporarea-edit/librosporarea-edit.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { AreaEditComponent } from './components/area-edit/area-edit.component';
     LibroComponent,
     LibroEditComponent,
     AreaComponent,
-    AreaEditComponent
+    AreaEditComponent,
+    AutorComponent,
+    AutorEditComponent,
+    LibrosporareaComponent,
+    LibrosporareaEditComponent
   ],
   imports: [
     BrowserModule,

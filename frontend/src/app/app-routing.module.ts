@@ -11,6 +11,10 @@ import { LibroComponent } from './components/libro/libro.component';
 import { LibroEditComponent } from './components/libro-edit/libro-edit.component';
 import { AreaComponent } from './components/area/area.component';
 import { AreaEditComponent } from './components/area-edit/area-edit.component';
+import { AutorComponent } from './components/autor/autor.component';
+import { AutorEditComponent } from './components/autor-edit/autor-edit.component';
+import { LibrosporareaComponent } from './components/librosporarea/librosporarea.component';
+import { LibrosporareaEditComponent } from './components/librosporarea-edit/librosporarea-edit.component';
 
 const routes: Routes = [
   {
@@ -52,6 +56,22 @@ const routes: Routes = [
   {
     path: 'area/edit/:id',
     component: AreaEditComponent
+  },
+  {
+    path: 'autor',
+    component: AutorComponent
+  },
+  {
+    path: 'autor/edit/:id',
+    component: AutorEditComponent
+  },
+  {
+    path: 'librosporarea',
+    component: LibrosporareaComponent
+  },
+  {
+    path: 'librosporarea/edit/:id',
+    component: LibrosporareaEditComponent
   }
 ];
 
