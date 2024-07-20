@@ -26,11 +26,11 @@ export class DataService {
     return this.http.delete(`${this.API_URI}` + url + `/${id}`);
   }
 
-  update(id: string | number, updated: User, url: string): Observable<User> {
-    return this.http.put(`${this.API_URI}` + url + `/${id}`, updated);
+  update(id: string | number, updated: any, url: string): Observable<User> {
+    return this.http.post(`${this.API_URI}` + url + `/${id}`, updated);
   }
 
-  save(Usuario: User, url: string) {
+  save(Usuario: any, url: string) {
     let headers = new HttpHeaders();
     headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post(`${this.API_URI}` + url, JSON.stringify(Usuario), { headers: headers })
@@ -38,7 +38,7 @@ export class DataService {
         retry(1),
         catchError(this.errorHandl)
       );
-  }
+}
 
   guardar(Usuario: User, url: string) {
     let headers = new HttpHeaders();
