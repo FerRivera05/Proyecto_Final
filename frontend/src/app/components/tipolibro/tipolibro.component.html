@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark bg-dark">
-    <a href="/" class="navbar-brand ps-3">REGISTRO DE PAISES</a>
+    <a href="/" class="navbar-brand ps-3">REGISTRO DE TIPOS DE LIBRO</a>
 </nav>
 
 <div class="agregar_contenedor"></div>
@@ -10,13 +10,13 @@
 
                 <div class="form-group">
                     <label for="" class="control-label" hidden>Registro No.</label>
-                    <input type="text" readonly="readonly" [(ngModel)]="user.cod_pais" name="cod_pais" placeholder="No"
+                    <input type="text" readonly="readonly" [(ngModel)]="user.cod_tipolibro" name="cod_tipolibro" placeholder="No"
                         class="form-control" required hidden>
                 </div>
 
                 <div class="form-group">
-                    <label for="" class="control-label">PAIS</label>
-                    <input type="text" [(ngModel)]="user.pais" name="pais" placeholder="DIGITE EL PAIS"
+                    <label for="" class="control-label">TIPO DE LIBRO</label>
+                    <input type="text" [(ngModel)]="user.tipo" name="tipo" placeholder="DIGITE EL TIPO DE LIBRO"
                         class="form-control" autofocus>
                 </div>
 
@@ -37,21 +37,21 @@
             <thead>
                 <tr>
                     <th>NO</th>
-                    <th>PAIS</th>
+                    <th>TIPO DE LIBRO</th>
                 </tr>
             </thead>
 
             <tbody>
                 <tr *ngFor="let User of TUser">
-                    <td>{{User.cod_pais}}</td>
-                    <td>{{User.pais}}</td>
+                    <td>{{User.cod_tipolibro}}</td>
+                    <td>{{User.tipo}}</td>
                     <td>
-                        <button class="btn btn-danger" (click)="EliminarData(User.cod_pais)">
+                        <button class="btn btn-danger" (click)="EliminarData(User.cod_tipolibro)">
                             Eliminar
                         </button>
                     </td>
                     <td>
-                        <button class="btn btn-success" [routerLink]="['/pais/edit', User.cod_pais]">
+                        <button class="btn btn-success" [routerLink]="['/tipolibro/edit', User.cod_tipolibro]">
                             Actualizar
                         </button>
                     </td>

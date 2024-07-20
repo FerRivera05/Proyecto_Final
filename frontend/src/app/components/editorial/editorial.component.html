@@ -46,8 +46,9 @@
                     <td>{{User.cod_editorial}}</td>
                     <td>{{User.editorial}}</td>
                     <td>
-                        <button class="btn btn-danger" (click)="EliminarData(User.cod_editorial)"
-                            onclick="javascript:alert('Registro Eliminado')">Eliminar</button>
+                        <button class="btn btn-danger" (click)="EliminarData(User.cod_editorial)">
+                            Eliminar
+                        </button>
                     </td>
                     <td>
                         <button class="btn btn-success" [routerLink]="['/editorial/edit', User.cod_editorial]">

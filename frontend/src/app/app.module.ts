@@ -10,6 +10,8 @@ import { EditorialComponent } from './components/editorial/editorial.component';
 import { EditorialEditComponent } from './components/editorial-edit/editorial-edit.component';
 import { PaisComponent } from './components/pais/pais.component';
 import { PaisEditComponent } from './components/pais-edit/pais-edit.component';
+import { TipolibroComponent } from './components/tipolibro/tipolibro.component';
+import { TipolibroEditComponent } from './components/tipolibro-edit/tipolibro-edit.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { PaisEditComponent } from './components/pais-edit/pais-edit.component';
     EditorialComponent,
     EditorialEditComponent,
     PaisComponent,
-    PaisEditComponent
+    PaisEditComponent,
+    TipolibroComponent,
+    TipolibroEditComponent
   ],
   imports: [
     BrowserModule,

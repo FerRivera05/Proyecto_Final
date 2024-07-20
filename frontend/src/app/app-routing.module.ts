@@ -5,6 +5,8 @@ import { EditorialComponent } from './components/editorial/editorial.component';
 import { EditorialEditComponent } from './components/editorial-edit/editorial-edit.component';
 import { PaisComponent } from './components/pais/pais.component';
 import { PaisEditComponent } from './components/pais-edit/pais-edit.component';
+import { TipolibroComponent } from './components/tipolibro/tipolibro.component';
+import { TipolibroEditComponent } from './components/tipolibro-edit/tipolibro-edit.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'pais/edit/:id',
     component: PaisEditComponent
+  },
+  {
+    path: 'tipolibro',
+    component: TipolibroComponent
+  },
+  {
+    path: 'tipolibro/edit/:id',
+    component: TipolibroEditComponent
   }
 ];
 
