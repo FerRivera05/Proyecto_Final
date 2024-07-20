@@ -15,7 +15,7 @@ export interface pais {
 
 export interface tipolibro {
     cod_tipolibro?: number | null;
-    tipolibro?: string | null;
+    tipo?: string | null;
 }
 
 export interface libro {
