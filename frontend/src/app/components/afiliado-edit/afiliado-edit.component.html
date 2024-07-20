@@ -1,0 +1,64 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand ps-3">AFILIADO</a>
+</nav>
+
+<div class="row mt-5">
+    <div class="card">
+        <div class="card-body">
+            <form action="">
+                
+                <div class="form-group">
+                    <label for="" class="control-label" hidden>Registro No.</label>
+                    <input type="text" readonly="readonly" [(ngModel)]="user.cod_afiliado" name="cod_afiliado" placeholder="No"
+                        class="form-control" required hidden>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="control-label">NOMBRE</label>
+                    <input type="text" [(ngModel)]="user.nombre" name="nombre" placeholder="DIGITE EL NOMBRE"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">PRIMER APELLIDO</label>
+                    <input type="text" [(ngModel)]="user.apellido1" name="apellido1" placeholder="DIGITE EL PRIMER APELLIDO"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">SEGUNDO APELLIDO</label>
+                    <input type="text" [(ngModel)]="user.apellido2" name="apelido2" placeholder="DIGITE EL SEGUNDO APELLIDO"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">DOCUMENTO</label>
+                    <input type="text" [(ngModel)]="user.documento" name="documento" placeholder="DIGITE EL DOCUMENTO"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">FECHA DE NACIMIENTO</label>
+                    <input type="text" [(ngModel)]="user.fechanacimiento" name="fechanacimiento" placeholder="DIGITE LA FECHA DE NACIMIENTO"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">TELEFONO</label>
+                    <input type="text" [(ngModel)]="user.telefono" name="telefono" placeholder="DIGITE EL TELEFONO"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">DIRECCION</label>
+                    <input type="text" [(ngModel)]="user.direccion" name="direccion" placeholder="DIGITE LA DIRECCION"
+                        class="form-control" autofocus>
+                </div>
+
+                <button class="btn btn-success btn-block mt-3" (click)="updateUser()">
+                    Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

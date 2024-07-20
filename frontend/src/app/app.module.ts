@@ -22,6 +22,8 @@ import { LibrosporareaComponent } from './components/librosporarea/librosporarea
 import { LibrosporareaEditComponent } from './components/librosporarea-edit/librosporarea-edit.component';
 import { LibrosporautorComponent } from './components/librosporautor/librosporautor.component';
 import { LibrosporautorEditComponent } from './components/librosporautor-edit/librosporautor-edit.component';
+import { AfiliadoComponent } from './components/afiliado/afiliado.component';
+import { AfiliadoEditComponent } from './components/afiliado-edit/afiliado-edit.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { LibrosporautorEditComponent } from './components/librosporautor-edit/li
     LibrosporareaComponent,
     LibrosporareaEditComponent,
     LibrosporautorComponent,
-    LibrosporautorEditComponent
+    LibrosporautorEditComponent,
+    AfiliadoComponent,
+    AfiliadoEditComponent
   ],
   imports: [
     BrowserModule,

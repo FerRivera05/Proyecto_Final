@@ -16,7 +16,7 @@ controller.edit = (req, res) => {
     const { cod_afiliado } = req.params;
 
     req.getConnection((err, conn) => {
-        conn.query('select * from afiliados where cod_afiliado = ?', [cod_afiliado], (err, afiliado) => {
+        conn.query('select * from afiliado where cod_afiliado = ?', [cod_afiliado], (err, afiliado) => {
             res.json(afiliado[0]);
         });
     });
