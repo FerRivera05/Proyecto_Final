@@ -15,6 +15,8 @@ import { AutorComponent } from './components/autor/autor.component';
 import { AutorEditComponent } from './components/autor-edit/autor-edit.component';
 import { LibrosporareaComponent } from './components/librosporarea/librosporarea.component';
 import { LibrosporareaEditComponent } from './components/librosporarea-edit/librosporarea-edit.component';
+import { LibrosporautorComponent } from './components/librosporautor/librosporautor.component';
+import { LibrosporautorEditComponent } from './components/librosporautor-edit/librosporautor-edit.component';
 
 const routes: Routes = [
   {
@@ -72,6 +74,14 @@ const routes: Routes = [
   {
     path: 'librosporarea/edit/:id',
     component: LibrosporareaEditComponent
+  },
+  {
+    path: 'librosporautor',
+    component: LibrosporautorComponent
+  },
+  {
+    path: 'librosporautor/edit/:id',
+    component: LibrosporautorEditComponent
   }
 ];
 

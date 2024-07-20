@@ -20,6 +20,8 @@ import { AutorComponent } from './components/autor/autor.component';
 import { AutorEditComponent } from './components/autor-edit/autor-edit.component';
 import { LibrosporareaComponent } from './components/librosporarea/librosporarea.component';
 import { LibrosporareaEditComponent } from './components/librosporarea-edit/librosporarea-edit.component';
+import { LibrosporautorComponent } from './components/librosporautor/librosporautor.component';
+import { LibrosporautorEditComponent } from './components/librosporautor-edit/librosporautor-edit.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { LibrosporareaEditComponent } from './components/librosporarea-edit/libr
     AutorComponent,
     AutorEditComponent,
     LibrosporareaComponent,
-    LibrosporareaEditComponent
+    LibrosporareaEditComponent,
+    LibrosporautorComponent,
+    LibrosporautorEditComponent
   ],
   imports: [
     BrowserModule,
