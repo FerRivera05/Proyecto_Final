@@ -1,0 +1,64 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand ps-3">PAIS</a>
+</nav>
+
+<div class="row mt-5">
+    <div class="card">
+        <div class="card-body">
+            <form action="">
+                
+                <div class="form-group">
+                    <label for="" class="control-label" hidden>Registro No.</label>
+                    <input type="text" readonly="readonly" [(ngModel)]="user.cod_libro" name="cod_libro" placeholder="No"
+                        class="form-control" required hidden>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="control-label">ISBN</label>
+                    <input type="text" [(ngModel)]="user.ISBN" name="ISBN" placeholder="DIGITE EL ISBN"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">TITULO</label>
+                    <input type="text" [(ngModel)]="user.titulo" name="titulo" placeholder="DIGITE EL TITULO"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">EDITORIAL</label>
+                    <input type="text" [(ngModel)]="user.cod_editorial" name="cod_editorial" placeholder="DIGITE EL EDITORIAL"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">PAIS</label>
+                    <input type="text" [(ngModel)]="user.cod_pais" name="cod_pais" placeholder="DIGITE EL PAIS"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">TIPO DE LIBRO</label>
+                    <input type="text" [(ngModel)]="user.cod_tipolibro" name="cod_tipolibro" placeholder="DIGITE EL TIPO DE LIBRO"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">LANZAMIENTO</label>
+                    <input type="text" [(ngModel)]="user.fechalanzamiento" name="fechalanzamiento" placeholder="DIGITE EL AÑO DE LANZAMIENTO"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">EDICION</label>
+                    <input type="text" [(ngModel)]="user.edicion" name="edicion" placeholder="DIGITE LA EDICION"
+                        class="form-control" autofocus>
+                </div>
+
+                <button class="btn btn-success btn-block mt-3" (click)="updateUser()">
+                    Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

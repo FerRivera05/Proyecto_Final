@@ -7,6 +7,8 @@ import { PaisComponent } from './components/pais/pais.component';
 import { PaisEditComponent } from './components/pais-edit/pais-edit.component';
 import { TipolibroComponent } from './components/tipolibro/tipolibro.component';
 import { TipolibroEditComponent } from './components/tipolibro-edit/tipolibro-edit.component';
+import { LibroComponent } from './components/libro/libro.component';
+import { LibroEditComponent } from './components/libro-edit/libro-edit.component';
 
 const routes: Routes = [
   {
@@ -32,6 +34,14 @@ const routes: Routes = [
   {
     path: 'tipolibro/edit/:id',
     component: TipolibroEditComponent
+  },
+  {
+    path: 'libro',
+    component: LibroComponent
+  },
+  {
+    path: 'libro/edit/:id',
+    component: LibroEditComponent
   }
 ];
 
