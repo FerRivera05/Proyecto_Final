@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './editorial-edit.component.html',
   styleUrls: ['./editorial-edit.component.css']
 })
-export class EditorialEditComponent {
+export class EditorialEditComponent implements OnInit {
 
   valorInput: number | undefined;
   TUser: any = [];
