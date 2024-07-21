@@ -18,11 +18,11 @@ export class DataService {
     return this.http.get(`${this.API_URI}` + url);
   }
 
-  getOne(id: string, url: string) {
+  getOne(id: string | number, url: string) {
     return this.http.get(`${this.API_URI}` + url + `/${id}`);
   }
 
-  delete(id: number, url: string) {
+  delete(id: number | string, url: string) {
     return this.http.delete(`${this.API_URI}` + url + `/${id}`);
   }
 
@@ -38,9 +38,9 @@ export class DataService {
         retry(1),
         catchError(this.errorHandl)
       );
-}
+  }
 
-  guardar(Usuario: User, url: string) {
+  guardar(Usuario: any, url: string) {
     let headers = new HttpHeaders();
     headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post(`${this.API_URI}` + url, JSON.stringify(Usuario), { headers: headers })
@@ -60,5 +60,5 @@ export class DataService {
     console.log(errorMessage);
     return throwError(errorMessage);
   }
-  
+
 }

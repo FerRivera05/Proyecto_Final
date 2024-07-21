@@ -1,0 +1,28 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand ps-3">TIPO DE PRESTAMO</a>
+</nav>
+
+<div class="row mt-5">
+    <div class="card">
+        <div class="card-body">
+            <form action="">
+                
+                <div class="form-group">
+                    <label for="" class="control-label" hidden>Registro No.</label>
+                    <input type="text" readonly="readonly" [(ngModel)]="user.cod_tipoprestamo" name="cod_tipoprestamo" placeholder="No"
+                        class="form-control" required hidden>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="control-label">TIPO DE PRESTAMO</label>
+                    <input type="text" [(ngModel)]="user.tipoprestamo" name="tipoprestamo" placeholder="DIGITE EL TIPO DE PRESTAMO"
+                        class="form-control" autofocus>
+                </div>
+
+                <button class="btn btn-success btn-block mt-3" (click)="updateUser()">
+                    Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

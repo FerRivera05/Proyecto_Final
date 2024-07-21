@@ -19,6 +19,8 @@ import { LibrosporautorComponent } from './components/librosporautor/librosporau
 import { LibrosporautorEditComponent } from './components/librosporautor-edit/librosporautor-edit.component';
 import { AfiliadoComponent } from './components/afiliado/afiliado.component';
 import { AfiliadoEditComponent } from './components/afiliado-edit/afiliado-edit.component';
+import { TipoprestamoComponent } from './components/tipoprestamo/tipoprestamo.component';
+import { TipoprestamoEditComponent } from './components/tipoprestamo-edit/tipoprestamo-edit.component';
 
 const routes: Routes = [
   {
@@ -92,6 +94,14 @@ const routes: Routes = [
   {
     path: 'afiliado/edit/:id',
     component: AfiliadoEditComponent
+  },
+  {
+    path: 'tipoprestamo',
+    component: TipoprestamoComponent
+  },
+  {
+    path: 'tipoprestamo/edit/:id',
+    component: TipoprestamoEditComponent
   }
 ];
 

@@ -1,5 +1,5 @@
 export interface User {
-    ctipou?: number;
+    ctipou?: number | string;
     descripcion?: string | null;
 }
 
@@ -63,7 +63,7 @@ export interface afiliado {
 }
 
 export interface tipoprestamo {
-    cod_tipoprestamo?: number | null;
+    cod_tipoprestamo?: string | null;
     tipoprestamo?: string | null;
 }
 
