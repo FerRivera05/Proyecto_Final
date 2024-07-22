@@ -29,8 +29,17 @@ import { PrestamoComponent } from './components/prestamo/prestamo.component';
 import { PrestamoEditComponent } from './components/prestamo-edit/prestamo-edit.component';
 import { EstadoporexistenciaComponent } from './components/estadoporexistencia/estadoporexistencia.component';
 import { EstadoporexistenciaEditComponent } from './components/estadoporexistencia-edit/estadoporexistencia-edit.component';
+import { NavegacionComponent } from './components/navegacion/navegacion.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/navegacion',
+    pathMatch: 'full'
+  },
+  {
+    path: '**', redirectTo: '/navegacion'
+  },
   {
     path: 'editorial',
     component: EditorialComponent
@@ -142,6 +151,10 @@ const routes: Routes = [
   {
     path: 'estadoporexistencia/edit/:id',
     component: EstadoporexistenciaEditComponent
+  },
+  {
+    path: 'navegacion',
+    component: NavegacionComponent
   }
 ];
 

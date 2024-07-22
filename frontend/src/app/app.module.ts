@@ -6,6 +6,7 @@ import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+// Tablas MySQL
 import { EditorialComponent } from './components/editorial/editorial.component';
 import { EditorialEditComponent } from './components/editorial-edit/editorial-edit.component';
 import { PaisComponent } from './components/pais/pais.component';
@@ -34,6 +35,12 @@ import { PrestamoComponent } from './components/prestamo/prestamo.component';
 import { PrestamoEditComponent } from './components/prestamo-edit/prestamo-edit.component';
 import { EstadoporexistenciaComponent } from './components/estadoporexistencia/estadoporexistencia.component';
 import { EstadoporexistenciaEditComponent } from './components/estadoporexistencia-edit/estadoporexistencia-edit.component';
+
+// Menu Responsive
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavegacionComponent } from './components/navegacion/navegacion.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -65,13 +72,17 @@ import { EstadoporexistenciaEditComponent } from './components/estadoporexistenc
     PrestamoComponent,
     PrestamoEditComponent,
     EstadoporexistenciaComponent,
-    EstadoporexistenciaEditComponent
+    EstadoporexistenciaEditComponent,
+    NavegacionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatMenuModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
