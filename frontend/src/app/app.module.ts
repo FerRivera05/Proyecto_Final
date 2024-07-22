@@ -26,6 +26,12 @@ import { AfiliadoComponent } from './components/afiliado/afiliado.component';
 import { AfiliadoEditComponent } from './components/afiliado-edit/afiliado-edit.component';
 import { TipoprestamoComponent } from './components/tipoprestamo/tipoprestamo.component';
 import { TipoprestamoEditComponent } from './components/tipoprestamo-edit/tipoprestamo-edit.component';
+import { EstadoComponent } from './components/estado/estado.component';
+import { EstadoEditComponent } from './components/estado-edit/estado-edit.component';
+import { LibrosporexistenciaComponent } from './components/librosporexistencia/librosporexistencia.component';
+import { LibrosporexistenciaEditComponent } from './components/librosporexistencia-edit/librosporexistencia-edit.component';
+import { PrestamoComponent } from './components/prestamo/prestamo.component';
+import { PrestamoEditComponent } from './components/prestamo-edit/prestamo-edit.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +55,13 @@ import { TipoprestamoEditComponent } from './components/tipoprestamo-edit/tipopr
     AfiliadoComponent,
     AfiliadoEditComponent,
     TipoprestamoComponent,
-    TipoprestamoEditComponent
+    TipoprestamoEditComponent,
+    EstadoComponent,
+    EstadoEditComponent,
+    LibrosporexistenciaComponent,
+    LibrosporexistenciaEditComponent,
+    PrestamoComponent,
+    PrestamoEditComponent
   ],
   imports: [
     BrowserModule,

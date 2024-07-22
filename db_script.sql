@@ -1,4 +1,3 @@
--- Active: 1720629609817@@localhost@3306@biblioteca
 CREATE DATABASE biblioteca;
 
 USE biblioteca;

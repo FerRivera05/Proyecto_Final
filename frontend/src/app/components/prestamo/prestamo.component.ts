@@ -1,19 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { librosporarea } from 'src/app/interfaces/user';
+import { prestamo } from 'src/app/interfaces/user';
 import { DataService } from '../../services/data.service';
 
 @Component({
-  selector: 'app-librosporarea',
-  templateUrl: './librosporarea.component.html',
-  styleUrls: ['./librosporarea.component.css']
+  selector: 'app-prestamo',
+  templateUrl: './prestamo.component.html',
+  styleUrls: ['./prestamo.component.css']
 })
-export class LibrosporareaComponent implements OnInit {
-
+export class PrestamoComponent implements OnInit {
+  
   TUser: any = [];
-  user: librosporarea = {
-    cod_libroarea: null,
-    cod_libro: null,
-    cod_area: null,
+  user: prestamo = {
+    cod_prestamo: null,
+    cod_existencia: null,
+    cod_afiliado: null,
+    fechaprestamo: null,
+    horaprestamo: null,
+    fechaentrega: null,
+    horaentrega: null,
+    cod_tipoprestamo: null,
+    cod_estado: null
   }
 
   constructor(private Data: DataService) { }
@@ -23,7 +29,7 @@ export class LibrosporareaComponent implements OnInit {
   }
 
   getUser() {
-    this.Data.getAll('/librosporarea')
+    this.Data.getAll('/prestamo')
       .subscribe({
         next: (res) => {
           this.TUser = res;
@@ -33,8 +39,8 @@ export class LibrosporareaComponent implements OnInit {
   }
 
   AgregarValor() {
-    delete this.user.cod_libroarea;
-    this.Data.save(this.user, '/librosporarea')
+    delete this.user.cod_prestamo;
+    this.Data.save(this.user, '/prestamo')
       .subscribe({
         next: (res) => {
           this.getUser();
@@ -44,7 +50,7 @@ export class LibrosporareaComponent implements OnInit {
   }
 
   EliminarData(id: number) {
-    this.Data.delete(id, '/librosporarea')
+    this.Data.delete(id, '/prestamo')
       .subscribe({
         next: (res) => {
           this.getUser();

@@ -2,7 +2,7 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((error, conn) => {
-        conn.query('select * from librosporexistencia', (err, librosporexistencia) => {
+        conn.query('select * from librosporexistencia order by cod_existencia', (err, librosporexistencia) => {
             if (err) {
                 res.json(err);
             }

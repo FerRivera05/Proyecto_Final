@@ -82,7 +82,7 @@ export interface prestamo {
     cod_existencia?: number | null;
     cod_afiliado?: number | null;
     fechaprestamo?: string | null;
-    horapresamo?: string | null;
+    horaprestamo?: string | null;
     fechaentrega?: string | null;
     horaentrega?: string | null;
     cod_tipoprestamo?: string | null;

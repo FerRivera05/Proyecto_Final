@@ -47,7 +47,7 @@ controller.update = (req, res) => {
 
 controller.delete = (req, res) => {
 
-    const { cod_libro: cod_prestamo } = req.params;
+    const { cod_prestamo } = req.params;
 
     req.getConnection((err, conn) => {
         conn.query('delete from prestamo where cod_prestamo = ?', [cod_prestamo], (err, rows) => {

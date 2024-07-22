@@ -1,0 +1,62 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand ps-3">REGISTRO DE LIBROS POR EXISTENCIA</a>
+</nav>
+
+<div class="agregar_contenedor"></div>
+<div class="row mt-5">
+    <div class="card">
+        <div class="card-body">
+            <form id="formulario" name="formulario" #f="ngForm" (ngSubmit)="AgregarValor()" novalidate>
+
+                <div class="form-group">
+                    <label for="" class="control-label" hidden>Registro No.</label>
+                    <input type="text" readonly="readonly" [(ngModel)]="user.cod_existencia" name="cod_existencia" placeholder="No"
+                        class="form-control" required hidden>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="control-label">LIBRO</label>
+                    <input type="text" [(ngModel)]="user.cod_libro" name="cod_libro" placeholder="DIGITE EL LIBRO"
+                        class="form-control" autofocus>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3" formnovalidate value="Save">
+                    Agregar
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+
+
+<div class="container">
+    <div class="row mt-25">
+        <table class="table table-borbered table-hover">
+            <thead>
+                <tr>
+                    <th>EXISTENCIA</th>
+                    <th>LIBRO</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let User of TUser">
+                    <td>{{User.cod_existencia}}</td>
+                    <td>{{User.cod_libro}}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)="EliminarData(User.cod_existencia)">
+                            Eliminar
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-success" [routerLink]="['/librosporexistencia/edit', User.cod_existencia]">
+                            Actualizar
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
