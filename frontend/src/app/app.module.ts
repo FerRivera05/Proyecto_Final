@@ -32,6 +32,8 @@ import { LibrosporexistenciaComponent } from './components/librosporexistencia/l
 import { LibrosporexistenciaEditComponent } from './components/librosporexistencia-edit/librosporexistencia-edit.component';
 import { PrestamoComponent } from './components/prestamo/prestamo.component';
 import { PrestamoEditComponent } from './components/prestamo-edit/prestamo-edit.component';
+import { EstadoporexistenciaComponent } from './components/estadoporexistencia/estadoporexistencia.component';
+import { EstadoporexistenciaEditComponent } from './components/estadoporexistencia-edit/estadoporexistencia-edit.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { PrestamoEditComponent } from './components/prestamo-edit/prestamo-edit.
     LibrosporexistenciaComponent,
     LibrosporexistenciaEditComponent,
     PrestamoComponent,
-    PrestamoEditComponent
+    PrestamoEditComponent,
+    EstadoporexistenciaComponent,
+    EstadoporexistenciaEditComponent
   ],
   imports: [
     BrowserModule,

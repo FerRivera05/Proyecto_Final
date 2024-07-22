@@ -1,0 +1,70 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand ps-3">REGISTRO DE LIBROS POR AREA</a>
+</nav>
+
+<div class="agregar_contenedor"></div>
+<div class="row mt-5">
+    <div class="card">
+        <div class="card-body">
+            <form id="formulario" name="formulario" #f="ngForm" (ngSubmit)="AgregarValor()" novalidate>
+
+                <div class="form-group">
+                    <label for="" class="control-label" hidden>Registro No.</label>
+                    <input type="text" readonly="readonly" [(ngModel)]="user.cod_estadoexistencia" name="cod_estadoexistencia" placeholder="No"
+                        class="form-control" required hidden>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="control-label">ESTADO</label>
+                    <input type="text" [(ngModel)]="user.cod_estado" name="cod_estado" placeholder="DIGITE EL ESTADO"
+                        class="form-control" autofocus>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="" class="control-label">EXISTENCIA</label>
+                    <input type="text" [(ngModel)]="user.cod_existencia" name="cod_existencia" placeholder="DIGITE LA EXISTENCIA"
+                        class="form-control" autofocus>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3" formnovalidate value="Save">
+                    Agregar
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+
+
+<div class="container">
+    <div class="row mt-25">
+        <table class="table table-borbered table-hover">
+            <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>ESTADO</th>
+                    <th>EXISTENCIA</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let User of TUser">
+                    <td>{{User.cod_estadoexistencia}}</td>
+                    <td>{{User.cod_estado}}</td>
+                    <td>{{User.cod_existencia}}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)="EliminarData(User.cod_estadoexistencia)">
+                            Eliminar
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-success" [routerLink]="['/estadoporexistencia/edit', User.cod_estadoexistencia]">
+                            Actualizar
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
