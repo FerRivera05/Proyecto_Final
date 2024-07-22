@@ -38,9 +38,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: '**', redirectTo: '/navegacion'
-  },
-  {
     path: 'editorial',
     component: EditorialComponent
   },
@@ -155,7 +152,10 @@ const routes: Routes = [
   {
     path: 'navegacion',
     component: NavegacionComponent
-  }
+  },
+  {
+    path: '**', redirectTo: '/navegacion'
+  },
 ];
 
 @NgModule({
