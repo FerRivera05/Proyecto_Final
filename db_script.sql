@@ -215,3 +215,5 @@ INSERT INTO estadoporexistencia (cod_existencia, cod_estado) VALUES
 (3, 2),
 (4, 2),
 (5, 2);
+
+use biblioteca;

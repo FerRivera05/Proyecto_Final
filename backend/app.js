@@ -45,7 +45,7 @@ app.use(morgan('dev'));
 app.use(myConnection(mysql,{
     host:'localhost',
     user:'root',
-    password:'password',
+    password:'1993',
     port:3306,
     database:'biblioteca'
 }, 'single'));
