@@ -41,6 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavegacionComponent } from './components/navegacion/navegacion.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import { FilterafiliadoPipe } from './pipes/filterafiliado.pipe';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { MatMenuModule } from '@angular/material/menu';
     EstadoporexistenciaComponent,
     EstadoporexistenciaEditComponent,
     NavegacionComponent,
+    FilterafiliadoPipe,
   ],
   imports: [
     BrowserModule,

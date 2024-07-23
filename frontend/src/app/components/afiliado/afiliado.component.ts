@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { afiliado } from 'src/app/interfaces/user';
 import { DataService } from '../../services/data.service';
+import { ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-afiliado',
@@ -8,6 +9,9 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./afiliado.component.css']
 })
 export class AfiliadoComponent implements OnInit {
+  @ViewChild('htmlData') htmlData!: ElementRef;
+  filterPost = '';
+
   
   TUser: any = [];
   user: afiliado = {
