@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { editorial } from 'src/app/interfaces/user';
 import { DataService } from '../../services/data.service';
+import { ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-editorial',
@@ -8,6 +9,9 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./editorial.component.css']
 })
 export class EditorialComponent implements OnInit {
+  @ViewChild('htmlData') htmlData!: ElementRef;
+  filterPost = '';
+
 
   TUser: any = [];
   user: editorial = {

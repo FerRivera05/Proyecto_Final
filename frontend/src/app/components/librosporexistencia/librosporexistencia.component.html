@@ -61,6 +61,9 @@
 </div>
 <br>
 
+<div class="form-group">
+    <input type="text" class="form-control" name="filterPost" placeholder="Digite el codigo del libro que desea buscar" [(ngModel)]="filterPost">
+  </div>
 
 <div class="container">
     <div class="row mt-25">
@@ -73,7 +76,7 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let User of TUser">
+                <tr *ngFor="let User of TUser | filterlibrosporexistencia:filterPost">
                     <td>{{User.cod_existencia}}</td>
                     <td>{{User.cod_libro}}</td>
                     <td>

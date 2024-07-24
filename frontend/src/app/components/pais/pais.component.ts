@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { pais } from 'src/app/interfaces/user';
 import { DataService } from '../../services/data.service';
+import { ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-pais',
@@ -8,6 +9,9 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./pais.component.css']
 })
 export class PaisComponent implements OnInit {
+  @ViewChild('htmlData') htmlData!: ElementRef;
+  filterPost = '';
+
   
   TUser: any = [];
   user: pais = {

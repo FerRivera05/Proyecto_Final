@@ -57,6 +57,9 @@
     </div>
 </div>
 <br>
+<div class="form-group">
+    <input type="text" class="form-control" name="filterPost" placeholder="Digite el tipo de prestamo que desea buscar" [(ngModel)]="filterPost">
+  </div>
 
 
 <div class="container">
@@ -70,7 +73,7 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let User of TUser">
+                <tr *ngFor="let User of TUser| filtertipoprestamo:filterPost">
                     <td>{{User.cod_tipoprestamo}}</td>
                     <td>{{User.tipoprestamo}}</td>
                     <td>

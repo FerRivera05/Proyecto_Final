@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { estado, estadoporexistencia } from 'src/app/interfaces/user';
 import { DataService } from '../../services/data.service';
+import { ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-estadoporexistencia',
@@ -8,6 +9,9 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./estadoporexistencia.component.css']
 })
 export class EstadoporexistenciaComponent implements OnInit {
+  @ViewChild('htmlData') htmlData!: ElementRef;
+  filterPost = '';
+
 
   TUser: any = [];
   user: estadoporexistencia = {

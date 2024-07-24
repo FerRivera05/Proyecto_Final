@@ -67,7 +67,9 @@
     </div>
 </div>
 <br>
-
+<div class="form-group">
+    <input type="text" class="form-control" name="filterPost" placeholder="Digite el numero que desea buscar" [(ngModel)]="filterPost">
+  </div>
 
 <div class="container">
     <div class="row mt-25">
@@ -81,7 +83,7 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let User of TUser">
+                <tr *ngFor="let User of TUser | filterestadoporexistencia:filterPost">
                     <td>{{User.cod_estadoexistencia}}</td>
                     <td>{{User.cod_estado}}</td>
                     <td>{{User.cod_existencia}}</td>

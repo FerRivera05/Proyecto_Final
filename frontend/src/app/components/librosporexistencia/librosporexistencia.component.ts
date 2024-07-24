@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { librosporexistencia } from 'src/app/interfaces/user';
 import { DataService } from '../../services/data.service';
+import { ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-librosporexistencia',
@@ -8,6 +9,9 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./librosporexistencia.component.css']
 })
 export class LibrosporexistenciaComponent implements OnInit {
+  @ViewChild('htmlData') htmlData!: ElementRef;
+  filterPost = '';
+
 
   TUser: any = [];
   user: librosporexistencia = {

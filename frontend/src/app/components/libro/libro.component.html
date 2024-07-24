@@ -100,7 +100,9 @@
     </div>
 </div>
 <br>
-
+<div class="form-group">
+    <input type="text" class="form-control" name="filterPost" placeholder="Digite el nombre que desea buscar" [(ngModel)]="filterPost">
+  </div>
 
 <div class="container">
     <div class="row mt-25">
@@ -119,7 +121,7 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let User of TUser">
+                <tr *ngFor="let User of TUser| filterlibro:filterPost">
                     <td>{{User.cod_libro}}</td>
                     <td>{{User.ISBN}}</td>
                     <td>{{User.titulo}}</td>
