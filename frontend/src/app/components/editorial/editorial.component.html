@@ -58,6 +58,9 @@
 </div>
 <br>
 
+<div class="form-group">
+    <input type="text" class="form-control" name="filterPost" placeholder="Digite la editorial que desea buscar" [(ngModel)]="filterPost">
+  </div>
 
 <div class="container">
     <div class="row mt-25">
@@ -70,7 +73,7 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let User of TUser">
+                <tr *ngFor="let User of TUser | filtereditorial:filterPost">
                     <td>{{User.cod_editorial}}</td>
                     <td>{{User.editorial}}</td>
                     <td>

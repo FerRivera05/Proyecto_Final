@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { librosporautor } from 'src/app/interfaces/user';
 import { DataService } from '../../services/data.service';
-
+import { ViewChild, ElementRef } from '@angular/core';
 @Component({
   selector: 'app-librosporautor',
   templateUrl: './librosporautor.component.html',
   styleUrls: ['./librosporautor.component.css']
 })
 export class LibrosporautorComponent implements OnInit {
-
+  @ViewChild('htmlData') htmlData!: ElementRef;
+  filterPost = '';
   TUser: any = [];
   user: librosporautor = {
     cod_libroautor: null,
