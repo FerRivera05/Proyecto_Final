@@ -15,9 +15,11 @@ export class TipoprestamoComponent implements OnInit {
     tipoprestamo: null,
   }
 
+  Tipoprestamolist: any; 
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListTipoprestamo();
     this.getUser();
   }
 
@@ -49,6 +51,12 @@ export class TipoprestamoComponent implements OnInit {
         },
         error: (err) => console.error(err)
       });
+  }
+
+  getDropListTipoprestamo() {
+    this.Data.getDropListTipoprestamo().subscribe((data:any)=>{
+      this.Tipoprestamolist=data;
+    })
   }
 
 }

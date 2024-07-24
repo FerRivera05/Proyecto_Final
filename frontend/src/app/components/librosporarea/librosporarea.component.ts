@@ -16,9 +16,13 @@ export class LibrosporareaComponent implements OnInit {
     cod_area: null,
   }
 
+  Librolist: any;
+  Arealist: any;
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListLibro();
+    this.getDropListArea();
     this.getUser();
   }
 
@@ -52,5 +56,19 @@ export class LibrosporareaComponent implements OnInit {
         error: (err) => console.error(err)
       });
   }
+
+  getDropListArea() {
+    this.Data.getDropListArea().subscribe((data:any)=>{
+      this.Arealist=data;
+    })
+  }
+
+  getDropListLibro() {
+    this.Data.getDropListLibro().subscribe((data:any)=>{
+      this.Librolist=data;
+    })
+  }
+
+
 
 }

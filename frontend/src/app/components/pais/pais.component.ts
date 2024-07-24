@@ -15,9 +15,11 @@ export class PaisComponent implements OnInit {
     pais: null,
   }
 
+  Paislist: any;
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListPais();
     this.getUser();
   }
 
@@ -50,6 +52,12 @@ export class PaisComponent implements OnInit {
         },
         error: (err) => console.error(err)
       });
+  }
+
+  getDropListPais() {
+    this.Data.getDropListPais().subscribe((data:any)=>{
+      this.Paislist=data;
+    })
   }
 
 }

@@ -15,9 +15,11 @@ export class EditorialComponent implements OnInit {
     editorial: null,
   }
 
+  Editoriallist: any;  
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListEditorial();
     this.getUser();
   }
 
@@ -51,5 +53,12 @@ export class EditorialComponent implements OnInit {
         error: (err) => console.error(err)
       });
   }
+
+  getDropListEditorial() {
+    this.Data.getDropListEditorial().subscribe((data:any)=>{
+      this.Editoriallist=data;
+    })
+  }
+
 
 }

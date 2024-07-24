@@ -18,11 +18,15 @@ export class LibrosporareaEditComponent {
     cod_area: null,
   }
 
+  Librolist: any;
+  Arealist: any;
   constructor(private Data: DataService,
     private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getDropListLibro();
+    this.getDropListArea();
     const params = this.activatedRoute.snapshot.params;
 
     if (params['id']) {
@@ -44,6 +48,18 @@ export class LibrosporareaEditComponent {
         },
         err => console.error(err)
       );
+  }
+
+  getDropListArea() {
+    this.Data.getDropListArea().subscribe((data:any)=>{
+      this.Arealist=data;
+    })
+  }
+
+  getDropListLibro() {
+    this.Data.getDropListLibro().subscribe((data:any)=>{
+      this.Librolist=data;
+    })
   }
 
 }

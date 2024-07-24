@@ -25,9 +25,11 @@ export class AfiliadoComponent implements OnInit {
     direccion: null,
   }
 
+  Afiliadolist: any;
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListAfiliado();
     this.getUser();
   }
 
@@ -60,6 +62,12 @@ export class AfiliadoComponent implements OnInit {
         },
         error: (err) => console.error(err)
       });
+  }
+
+  getDropListAfiliado() {
+    this.Data.getDropListAfiliado().subscribe((data:any)=>{
+      this.Afiliadolist=data;
+    })
   }
 
 }

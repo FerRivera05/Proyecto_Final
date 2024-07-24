@@ -40,6 +40,39 @@ export class DataService {
       );
   }
 
+  getDropListEditorial():Observable<any[]>{
+    return this.http.get<any>(this.API_URI+'/editorial')
+    }
+  getDropListPais():Observable<any[]>{
+    return this.http.get<any>(this.API_URI+'/pais')
+    }
+  getDropListTipolibro():Observable<any[]>{
+   return this.http.get<any>(this.API_URI+'/tipolibro')
+    }
+  getDropListLibro():Observable<any[]>{
+    return this.http.get<any>(this.API_URI+'/libro')
+    }
+  getDropListArea():Observable<any[]>{
+   return this.http.get<any>(this.API_URI+'/area')
+    }
+  getDropListAutor():Observable<any[]>{
+  return this.http.get<any>(this.API_URI+'/autor')
+    }
+  getDropListAfiliado():Observable<any[]>{
+   return this.http.get<any>(this.API_URI+'/afiliado')
+    }
+  getDropListTipoprestamo():Observable<any[]>{
+   return this.http.get<any>(this.API_URI+'/tipoprestamo')
+    }
+  getDropListEstado():Observable<any[]>{
+   return this.http.get<any>(this.API_URI+'/estado')
+    }
+  getDropListLibrosporexistencia():Observable<any[]>{
+   return this.http.get<any>(this.API_URI+'/librosporexistencia')
+    }
+      
+    
+
   guardar(Usuario: any, url: string) {
     let headers = new HttpHeaders();
     headers = new HttpHeaders().set('Content-Type', 'application/json');

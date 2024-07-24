@@ -22,9 +22,17 @@ export class PrestamoComponent implements OnInit {
     cod_estado: null
   }
 
+  Librosporexistencialist: any;
+  Afiliadolist: any;
+  Tipoprestamolist: any; 
+  Estadolist: any;
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListLibrosporexistencia();
+    this.getDropListAfiliado();
+    this.getDropListTipoprestamo();
+    this.getDropListEstado();
     this.getUser();
   }
 
@@ -58,5 +66,30 @@ export class PrestamoComponent implements OnInit {
         error: (err) => console.error(err)
       });
   }
+
+  getDropListLibrosporexistencia() {
+    this.Data.getDropListLibrosporexistencia().subscribe((data:any)=>{
+      this.Librosporexistencialist=data;
+    })
+  }
+
+  getDropListAfiliado() {
+    this.Data.getDropListAfiliado().subscribe((data:any)=>{
+      this.Afiliadolist=data;
+    })
+  }
+
+  getDropListTipoprestamo() {
+    this.Data.getDropListTipoprestamo().subscribe((data:any)=>{
+      this.Tipoprestamolist=data;
+    })
+  }
+
+  getDropListEstado() {
+    this.Data.getDropListEstado().subscribe((data:any)=>{
+      this.Estadolist=data;
+    })
+  }
+
 
 }

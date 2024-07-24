@@ -18,11 +18,15 @@ export class LibrosporautorEditComponent implements OnInit {
     cod_autor: null,
   }
 
+  Librolist: any; 
+  Autorlist: any;
   constructor(private Data: DataService,
     private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getDropListLibro();
+    this.getDropListAutor();
     const params = this.activatedRoute.snapshot.params;
 
     if (params['id']) {
@@ -44,6 +48,18 @@ export class LibrosporautorEditComponent implements OnInit {
         },
         err => console.error(err)
       );
+  }
+
+  getDropListLibro() {
+    this.Data.getDropListLibro().subscribe((data:any)=>{
+      this.Librolist=data;
+    })
+  }
+
+  getDropListAutor() {
+    this.Data.getDropListAutor().subscribe((data:any)=>{
+      this.Autorlist=data;
+    })
   }
 
 }

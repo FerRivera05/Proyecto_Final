@@ -43,16 +43,20 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="" class="control-label">ESTADO</label>
-                    <input type="text" [(ngModel)]="user.cod_estado" name="cod_estado" placeholder="DIGITE EL ESTADO"
-                        class="form-control" autofocus>
+                    <option>SELECCIONE EL ESTADO</option>
+                  <select class="form-control" size="1" [(ngModel)]="user.cod_estado" name="cod_estado" required>
+                         <option *ngFor="let lista of Estadolist" value={{lista.cod_estado}}>{{lista.estado}}</option>
+                    </select>
                 </div>
 
-                <div class="form-group mt-2">
-                    <label for="" class="control-label">EXISTENCIA</label>
-                    <input type="text" [(ngModel)]="user.cod_existencia" name="cod_existencia" placeholder="DIGITE LA EXISTENCIA"
-                        class="form-control" autofocus>
+                <div class="form-group">
+                    <option>SELECCIONE LA EXISTENCIA</option>
+                  <select class="form-control" size="1" [(ngModel)]="user.cod_existencia" name="cod_existencia" required>
+                         <option *ngFor="let lista of Librosporexistencialist" value={{lista.cod_existencia}}>{{lista.cod_existencia}}</option>
+                    </select>
                 </div>
+                  
+                <br>
 
                 <button type="submit" class="btn btn-primary mt-3" formnovalidate value="Save">
                     Agregar

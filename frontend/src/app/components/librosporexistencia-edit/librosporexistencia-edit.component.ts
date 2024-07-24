@@ -17,11 +17,13 @@ export class LibrosporexistenciaEditComponent implements OnInit {
     cod_libro: null,
   }
 
+  Librolist: any;
   constructor(private Data: DataService,
     private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getDropListLibro();
     const params = this.activatedRoute.snapshot.params;
 
     if (params['id']) {
@@ -43,6 +45,12 @@ export class LibrosporexistenciaEditComponent implements OnInit {
         },
         err => console.error(err)
       );
+  }
+
+  getDropListLibro() {
+    this.Data.getDropListLibro().subscribe((data:any)=>{
+      this.Librolist=data;
+    })
   }
 
 }

@@ -16,9 +16,13 @@ export class LibrosporautorComponent implements OnInit {
     cod_autor: null,
   }
 
+  Librolist: any; 
+  Autorlist: any; 
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListLibro();
+    this.getDropListAutor();
     this.getUser();
   }
 
@@ -51,6 +55,18 @@ export class LibrosporautorComponent implements OnInit {
         },
         error: (err) => console.error(err)
       });
+  }
+
+  getDropListLibro() {
+    this.Data.getDropListLibro().subscribe((data:any)=>{
+      this.Librolist=data;
+    })
+  }
+
+  getDropListAutor() {
+    this.Data.getDropListAutor().subscribe((data:any)=>{
+      this.Autorlist=data;
+    })
   }
 
 }

@@ -21,9 +21,17 @@ export class LibroComponent implements OnInit {
     edicion: null,
   }
 
+  Librolist: any;
+  Editoriallist: any;
+  Paislist: any;
+  Tipolibrolist: any;    
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListLibro();
+    this.getDropListEditorial();
+    this.getDropListPais();
+    this.getDropListTipolibro();
     this.getUser();
   }
 
@@ -57,5 +65,30 @@ export class LibroComponent implements OnInit {
         error: (err) => console.error(err)
       });
   }
+
+  getDropListLibro() {
+    this.Data.getDropListLibro().subscribe((data:any)=>{
+      this.Librolist=data;
+    })
+  }
+
+  getDropListEditorial() {
+    this.Data.getDropListEditorial().subscribe((data:any)=>{
+      this.Editoriallist=data;
+    })
+  }
+
+  getDropListPais() {
+    this.Data.getDropListPais().subscribe((data:any)=>{
+      this.Paislist=data;
+    })
+  }
+
+  getDropListTipolibro() {
+    this.Data.getDropListTipolibro().subscribe((data:any)=>{
+      this.Tipolibrolist=data;
+    })
+  }
+  
 
 }

@@ -18,11 +18,15 @@ export class EstadoporexistenciaEditComponent {
     cod_existencia: null,
   }
 
+  Estadolist: any;
+  Librosporexistencialist: any;
   constructor(private Data: DataService,
     private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getDropListEstado();
+    this.getDropListLibrosporexistencia();
     const params = this.activatedRoute.snapshot.params;
 
     if (params['id']) {
@@ -44,6 +48,18 @@ export class EstadoporexistenciaEditComponent {
         },
         err => console.error(err)
       );
+  }
+
+  getDropListEstado() {
+    this.Data.getDropListEstado().subscribe((data:any)=>{
+      this.Estadolist=data;
+    })
+  }
+
+  getDropListLibrosporexistencia() {
+    this.Data.getDropListLibrosporexistencia().subscribe((data:any)=>{
+      this.Librosporexistencialist=data;
+    })
   }
 
 }

@@ -15,9 +15,11 @@ export class LibrosporexistenciaComponent implements OnInit {
     cod_libro: null,
   }
 
+  Librolist: any;
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListLibro();
     this.getUser();
   }
 
@@ -51,4 +53,11 @@ export class LibrosporexistenciaComponent implements OnInit {
         error: (err) => console.error(err)
       });
   }
+
+  getDropListLibro() {
+    this.Data.getDropListLibro().subscribe((data:any)=>{
+      this.Librolist=data;
+    })
+  }
+  
 }

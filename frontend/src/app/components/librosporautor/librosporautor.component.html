@@ -43,16 +43,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="" class="control-label">LIBRO</label>
-                    <input type="text" [(ngModel)]="user.cod_libro" name="cod_libro" placeholder="DIGITE EL LIBRO"
-                        class="form-control" autofocus>
+                    <option>SELECCIONE EL LIBRO</option>
+                  <select class="form-control" size="1" [(ngModel)]="user.cod_libro" name="cod_libro" required>
+                         <option *ngFor="let lista of Librolist" value={{lista.cod_libro}}>{{lista.titulo}}</option>
+                    </select>
                 </div>
 
-                <div class="form-group mt-2">
-                    <label for="" class="control-label">AUTOR</label>
-                    <input type="text" [(ngModel)]="user.cod_autor" name="cod_autor" placeholder="DIGITE EL AUTOR"
-                        class="form-control" autofocus>
+                <div class="form-group">
+                    <option>SELECCIONE EL AUTOR</option>
+                  <select class="form-control" size="1" [(ngModel)]="user.cod_autor" name="cod_autor" required>
+                         <option *ngFor="let lista of Autorlist" value={{lista.cod_autor}}>{{lista.autor}}</option>
+                    </select>
                 </div>
+                <br>
 
                 <button type="submit" class="btn btn-primary mt-3" formnovalidate value="Save">
                     Agregar

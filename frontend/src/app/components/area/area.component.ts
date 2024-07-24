@@ -15,9 +15,11 @@ export class AreaComponent implements OnInit {
     area: null,
   }
 
+  Arealist: any;
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListArea();
     this.getUser();
   }
 
@@ -50,6 +52,12 @@ export class AreaComponent implements OnInit {
         },
         error: (err) => console.error(err)
       });
+  }
+
+  getDropListArea() {
+    this.Data.getDropListArea().subscribe((data:any)=>{
+      this.Arealist=data;
+    })
   }
 
 }

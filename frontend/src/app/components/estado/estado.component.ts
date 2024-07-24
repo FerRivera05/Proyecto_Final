@@ -15,9 +15,11 @@ export class EstadoComponent implements OnInit {
     estado: null,
   }
 
+  Estadolist: any;
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListEstado();
     this.getUser();
   }
 
@@ -50,6 +52,12 @@ export class EstadoComponent implements OnInit {
         },
         error: (err) => console.error(err)
       });
+  }
+
+  getDropListEstado() {
+    this.Data.getDropListEstado().subscribe((data:any)=>{
+      this.Estadolist=data;
+    })
   }
 
 }

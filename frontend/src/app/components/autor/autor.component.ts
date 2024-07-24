@@ -15,9 +15,11 @@ export class AutorComponent implements OnInit {
     autor: null,
   }
 
+  Autorlist: any;  
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListAutor();
     this.getUser();
   }
 
@@ -50,6 +52,12 @@ export class AutorComponent implements OnInit {
         },
         error: (err) => console.error(err)
       });
+  }
+
+  getDropListAutor() {
+    this.Data.getDropListAutor().subscribe((data:any)=>{
+      this.Autorlist=data;
+    })
   }
 
 }

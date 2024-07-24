@@ -16,9 +16,13 @@ export class EstadoporexistenciaComponent implements OnInit {
     cod_existencia: null,
   }
 
+  Estadolist: any;
+  Librosporexistencialist: any;
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListEstado();
+    this.getDropListLibrosporexistencia();
     this.getUser();
   }
 
@@ -51,6 +55,18 @@ export class EstadoporexistenciaComponent implements OnInit {
         },
         error: (err) => console.error(err)
       });
+  }
+
+  getDropListEstado() {
+    this.Data.getDropListEstado().subscribe((data:any)=>{
+      this.Estadolist=data;
+    })
+  }
+
+  getDropListLibrosporexistencia() {
+    this.Data.getDropListLibrosporexistencia().subscribe((data:any)=>{
+      this.Librosporexistencialist=data;
+    })
   }
 
 }

@@ -15,9 +15,11 @@ export class TipolibroComponent implements OnInit {
     tipo: null,
   }
 
+  Tipolibrolist: any;
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
+    this.getDropListTipolibro();
     this.getUser();
   }
 
@@ -50,6 +52,12 @@ export class TipolibroComponent implements OnInit {
         },
         error: (err) => console.error(err)
       });
+  }
+
+  getDropListTipolibro() {
+    this.Data.getDropListTipolibro().subscribe((data:any)=>{
+      this.Tipolibrolist=data;
+    })
   }
 
 }
