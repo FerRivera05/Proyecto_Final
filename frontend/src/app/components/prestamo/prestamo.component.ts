@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { prestamo } from 'src/app/interfaces/user';
 import { DataService } from '../../services/data.service';
-
+import { ViewChild, ElementRef } from '@angular/core';
 @Component({
   selector: 'app-prestamo',
   templateUrl: './prestamo.component.html',
   styleUrls: ['./prestamo.component.css']
 })
 export class PrestamoComponent implements OnInit {
-  
+  @ViewChild('htmlData') htmlData!: ElementRef;
+  filterPost = '';
+
   TUser: any = [];
   user: prestamo = {
     cod_prestamo: null,

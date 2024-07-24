@@ -42,6 +42,20 @@ import { NavegacionComponent } from './components/navegacion/navegacion.componen
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { FilterafiliadoPipe } from './pipes/filterafiliado.pipe';
+import { FilterareaPipe } from './pipes/filterarea.pipe';
+import { FilterautorPipe } from './pipes/filterautor.pipe';
+import { FiltereditorialPipe } from './pipes/filtereditorial.pipe';
+import { FilterestadoPipe } from './pipes/filterestado.pipe';
+
+import { FilterlibroPipe } from './pipes/filterlibro.pipe';
+import { FilterlibrosporareaPipe } from './pipes/filterlibrosporarea.pipe';
+import { FilterlibrosporautorPipe } from './pipes/filterlibrosporautor.pipe';
+import { FilterlibrosporexistenciaPipe } from './pipes/filterlibrosporexistencia.pipe';
+import { FilterpaisPipe } from './pipes/filterpais.pipe';
+import { FilterprestamoPipe } from './pipes/filterprestamo.pipe';
+import { FiltertipolibroPipe } from './pipes/filtertipolibro.pipe';
+import { FiltertipoprestamoPipe } from './pipes/filtertipoprestamo.pipe';
+import { FilterestadoporexistenciaPipe } from './pipes/filterestadoporexistencia.pipe';
 
 @NgModule({
   declarations: [
@@ -76,6 +90,20 @@ import { FilterafiliadoPipe } from './pipes/filterafiliado.pipe';
     EstadoporexistenciaEditComponent,
     NavegacionComponent,
     FilterafiliadoPipe,
+    FilterareaPipe,
+    FilterautorPipe,
+    FiltereditorialPipe,
+    FilterestadoPipe,
+    
+    FilterlibroPipe,
+    FilterlibrosporareaPipe,
+    FilterlibrosporautorPipe,
+    FilterlibrosporexistenciaPipe,
+    FilterpaisPipe,
+    FilterprestamoPipe,
+    FiltertipolibroPipe,
+    FiltertipoprestamoPipe,
+    FilterestadoporexistenciaPipe,
   ],
   imports: [
     BrowserModule,

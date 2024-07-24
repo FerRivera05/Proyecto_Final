@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { tipoprestamo } from 'src/app/interfaces/user';
 import { DataService } from '../../services/data.service';
+import { ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-tipoprestamo',
@@ -8,7 +9,9 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./tipoprestamo.component.css']
 })
 export class TipoprestamoComponent implements OnInit {
-  
+  @ViewChild('htmlData') htmlData!: ElementRef;
+  filterPost = '';
+
   TUser: any = [];
   user: tipoprestamo = {
     cod_tipoprestamo: null,
