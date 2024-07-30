@@ -21,7 +21,6 @@ export class PrestamoEditComponent implements OnInit {
     fechaentrega: null,
     horaentrega: null,
     cod_tipoprestamo: null,
-    cod_estado: null,
   }
 
   Librosporexistencialist: any;
@@ -36,7 +35,6 @@ export class PrestamoEditComponent implements OnInit {
     this.getDropListLibrosporexistencia();
     this.getDropListAfiliado();
     this.getDropListTipoprestamo();
-    this.getDropListEstado();
     const params = this.activatedRoute.snapshot.params;
 
     if (params['id']) {
@@ -75,12 +73,6 @@ export class PrestamoEditComponent implements OnInit {
   getDropListTipoprestamo() {
     this.Data.getDropListTipoprestamo().subscribe((data:any)=>{
       this.Tipoprestamolist=data;
-    })
-  }
-
-  getDropListEstado() {
-    this.Data.getDropListEstado().subscribe((data:any)=>{
-      this.Estadolist=data;
     })
   }
 

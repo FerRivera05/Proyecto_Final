@@ -11,7 +11,7 @@ import { ViewChild, ElementRef } from '@angular/core';
 export class LibroComponent implements OnInit {
   @ViewChild('htmlData') htmlData!: ElementRef;
   filterPost = '';
-  
+
   TUser: any = [];
   user: libro = {
     cod_libro: null,
@@ -22,12 +22,15 @@ export class LibroComponent implements OnInit {
     cod_tipolibro: null,
     fechalanzamiento: null,
     edicion: null,
+    editorial: null,
+    pais: null,
+    tipolibro: null
   }
 
   Librolist: any;
   Editoriallist: any;
   Paislist: any;
-  Tipolibrolist: any;    
+  Tipolibrolist: any;
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
@@ -49,8 +52,17 @@ export class LibroComponent implements OnInit {
   }
 
   AgregarValor() {
-    delete this.user.cod_libro;
-    this.Data.save(this.user, '/libro')
+    const libroData = {
+      ISBN: this.user.ISBN,
+      cod_editorial: this.user.cod_editorial,
+      cod_pais: this.user.cod_pais,
+      cod_tipolibro: this.user.cod_tipolibro,
+      edicion: this.user.edicion,
+      fechalanzamiento: this.user.fechalanzamiento,
+      titulo: this.user.titulo,
+    };
+
+    this.Data.save(libroData, '/libro')
       .subscribe({
         next: (res) => {
           this.getUser();
@@ -70,28 +82,27 @@ export class LibroComponent implements OnInit {
   }
 
   getDropListLibro() {
-    this.Data.getDropListLibro().subscribe((data:any)=>{
-      this.Librolist=data;
+    this.Data.getDropListLibro().subscribe((data: any) => {
+      this.Librolist = data;
     })
   }
 
   getDropListEditorial() {
-    this.Data.getDropListEditorial().subscribe((data:any)=>{
-      this.Editoriallist=data;
+    this.Data.getDropListEditorial().subscribe((data: any) => {
+      this.Editoriallist = data;
     })
   }
 
   getDropListPais() {
-    this.Data.getDropListPais().subscribe((data:any)=>{
-      this.Paislist=data;
+    this.Data.getDropListPais().subscribe((data: any) => {
+      this.Paislist = data;
     })
   }
 
   getDropListTipolibro() {
-    this.Data.getDropListTipolibro().subscribe((data:any)=>{
-      this.Tipolibrolist=data;
+    this.Data.getDropListTipolibro().subscribe((data: any) => {
+      this.Tipolibrolist = data;
     })
   }
-  
 
 }

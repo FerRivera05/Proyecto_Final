@@ -2,7 +2,7 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((error, conn) => {
-        conn.query('select * from librosporautor', (err, librosporautor) => {
+        conn.query('select a.cod_libroautor as cod_libroautor, a.cod_autor as cod_autor, a.cod_libro as cod_libro, b.autor as autor, c.titulo as titulo from librosporautor a inner join autor b on a.cod_autor = b.cod_autor inner join libro c on a.cod_libro = c.cod_libro order by cod_libroautor;', (err, librosporautor) => {
             if (err) {
                 res.json(err);
             }

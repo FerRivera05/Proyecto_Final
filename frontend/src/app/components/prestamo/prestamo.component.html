@@ -87,13 +87,6 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <option>SELECCIONE EL ESTADO</option>
-                  <select class="form-control" size="1" [(ngModel)]="user.cod_estado" name="cod_estado" required>
-                         <option *ngFor="let lista of Estadolist" value={{lista.cod_estado}}>{{lista.estado}}</option>
-                    </select>
-                </div>
-
                 <button type="submit" class="btn btn-primary mt-3" formnovalidate value="Save">
                     Agregar
                 </button>
@@ -121,21 +114,19 @@
                     <th>FECHA ENTREGA</th>
                     <th>HORA ENTREGA</th>
                     <th>TIPO</th>
-                    <th>ESTADO</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr *ngFor="let User of TUser| filterprestamo:filterPost">
+                <tr *ngFor="let User of TUser | filterprestamo:filterPost">
                     <td>{{User.cod_prestamo}}</td>
-                    <td>{{User.cod_existencia}}</td>
-                    <td>{{User.cod_afiliado}}</td>
+                    <td>{{User.titulo}}</td>
+                    <td>{{User.nombre}}</td>
                     <td>{{User.fechaprestamo}}</td>
                     <td>{{User.horaentrega}}</td>
                     <td>{{User.fechaentrega}}</td>
                     <td>{{User.horaentrega}}</td>
-                    <td>{{User.cod_tipoprestamo}}</td>
-                    <td>{{User.cod_estado}}</td>
+                    <td>{{User.tipoprestamo}}</td>
                     <td>
                         <button class="btn btn-danger" (click)="EliminarData(User.cod_prestamo)">
                             Eliminar

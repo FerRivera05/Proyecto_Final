@@ -20,7 +20,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-2">
                     <option>SELECCIONE EL AREA</option>
                   <select class="form-control" size="1" [(ngModel)]="user.cod_area" name="cod_area" required>
                          <option *ngFor="let lista of Arealist" value={{lista.cod_area}}>{{lista.area}}</option>

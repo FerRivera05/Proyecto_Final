@@ -20,7 +20,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-2">
                     <option>SELECCIONE LA EXISTENCIA</option>
                   <select class="form-control" size="1" [(ngModel)]="user.cod_existencia" name="cod_existencia" required>
                          <option *ngFor="let lista of Librosporexistencialist" value={{lista.cod_existencia}}>{{lista.cod_existencia}}</option>

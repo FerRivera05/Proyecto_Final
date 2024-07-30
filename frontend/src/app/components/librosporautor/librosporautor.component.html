@@ -49,7 +49,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-2">
                     <option>SELECCIONE EL AUTOR</option>
                   <select class="form-control" size="1" [(ngModel)]="user.cod_autor" name="cod_autor" required>
                          <option *ngFor="let lista of Autorlist" value={{lista.cod_autor}}>{{lista.autor}}</option>
@@ -84,8 +84,8 @@
             <tbody>
                 <tr *ngFor="let User of TUser | filterlibrosporautor:filterPost">
                     <td>{{User.cod_libroautor}}</td>
-                    <td>{{User.cod_libro}}</td>
-                    <td>{{User.cod_autor}}</td>
+                    <td>{{User.titulo}}</td>
+                    <td>{{User.autor}}</td>
                     <td>
                         <button class="btn btn-danger" (click)="EliminarData(User.cod_libroautor)">
                             Eliminar

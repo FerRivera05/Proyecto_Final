@@ -2,7 +2,7 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((error, conn) => {
-        conn.query('select * from librosporarea', (err, librosporarea) => {
+        conn.query('SELECT A.COD_LIBROAREA as cod_libroarea, A.COD_LIBRO AS cod_libro, A.COD_AREA AS cod_area, B.AREA AS area, C.TITULO AS titulo FROM LIBROSPORAREA A INNER JOIN AREA B ON A.COD_AREA = B.COD_AREA INNER JOIN LIBRO C ON A.COD_LIBRO = C.COD_LIBRO order by cod_libroarea;', (err, librosporarea) => {
             if (err) {
                 res.json(err);
             }

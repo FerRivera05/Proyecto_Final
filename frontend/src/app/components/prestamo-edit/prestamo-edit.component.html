@@ -58,13 +58,6 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <option>SELECCIONE EL ESTADO</option>
-                  <select class="form-control" size="1" [(ngModel)]="user.cod_estado" name="cod_estado" required>
-                         <option *ngFor="let lista of Estadolist" value={{lista.cod_estado}}>{{lista.estado}}</option>
-                    </select>
-                </div>
-
                 <button class="btn btn-success btn-block mt-3" (click)="updateUser()">
                     Actualizar
                 </button>

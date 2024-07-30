@@ -1,7 +1,4 @@
-export interface User {
-    ctipou?: number | string;
-    descripcion?: string | null;
-}
+export interface User { }
 
 export interface editorial {
     cod_editorial?: number | null;
@@ -27,6 +24,9 @@ export interface libro {
     cod_tipolibro?: number | null;
     fechalanzamiento?: number | null;
     edicion?: string | null;
+    editorial?: string | null;
+    pais?: string | null;
+    tipolibro?: string | null;
 }
 
 export interface area {
@@ -43,12 +43,16 @@ export interface librosporarea {
     cod_libroarea?: number | null;
     cod_libro?: number | null;
     cod_area?: number | null;
+    titulo?: string | null;
+    area?: string | null;
 }
 
 export interface librosporautor {
     cod_libroautor?: number | null;
     cod_libro?: number | null;
     cod_autor?: number | null;
+    titulo?: string | null;
+    autor?: string | null;
 }
 
 export interface afiliado {
@@ -75,6 +79,7 @@ export interface estado {
 export interface librosporexistencia {
     cod_existencia?: number | null;
     cod_libro?: number | null;
+    titulo?: number | null;
 }
 
 export interface prestamo {
@@ -86,11 +91,15 @@ export interface prestamo {
     fechaentrega?: string | null;
     horaentrega?: string | null;
     cod_tipoprestamo?: string | null;
-    cod_estado?: number | null;
+    titulo?: string | null;
+    nombre?: string | null;
+    tipoprestamo?: string | null;
 }
 
 export interface estadoporexistencia {
     cod_estadoexistencia?: number | null;
     cod_existencia?: number | null;
     cod_estado?: number | null;
+    titulo?: string | null;
+    estado?: string | null;
 }

@@ -18,6 +18,8 @@ export class EstadoporexistenciaComponent implements OnInit {
     cod_estadoexistencia: null,
     cod_estado: null,
     cod_existencia: null,
+    estado: null,
+    titulo: null
   }
 
   Estadolist: any;

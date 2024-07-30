@@ -78,7 +78,7 @@
             <tbody>
                 <tr *ngFor="let User of TUser | filterlibrosporexistencia:filterPost">
                     <td>{{User.cod_existencia}}</td>
-                    <td>{{User.cod_libro}}</td>
+                    <td>{{User.titulo}}</td>
                     <td>
                         <button class="btn btn-danger" (click)="EliminarData(User.cod_existencia)">
                             Eliminar

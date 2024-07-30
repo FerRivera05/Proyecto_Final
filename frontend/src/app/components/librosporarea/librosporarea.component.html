@@ -49,7 +49,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-2">
                     <option>SELECCIONE EL AREA</option>
                   <select class="form-control" size="1" [(ngModel)]="user.cod_area" name="cod_area" required>
                          <option *ngFor="let lista of Arealist" value={{lista.cod_area}}>{{lista.area}}</option>
@@ -84,8 +84,8 @@
             <tbody>
                 <tr *ngFor="let User of TUser| filterlibrosporarea:filterPost">
                     <td>{{User.cod_libroarea}}</td>
-                    <td>{{User.cod_libro}}</td>
-                    <td>{{User.cod_area}}</td>
+                    <td>{{User.titulo}}</td>
+                    <td>{{User.area}}</td>
                     <td>
                         <button class="btn btn-danger" (click)="EliminarData(User.cod_libroarea)">
                             Eliminar

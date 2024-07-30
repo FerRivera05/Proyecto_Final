@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { prestamo } from 'src/app/interfaces/user';
 import { DataService } from '../../services/data.service';
 import { ViewChild, ElementRef } from '@angular/core';
+
 @Component({
   selector: 'app-prestamo',
   templateUrl: './prestamo.component.html',
@@ -21,27 +22,27 @@ export class PrestamoComponent implements OnInit {
     fechaentrega: null,
     horaentrega: null,
     cod_tipoprestamo: null,
-    cod_estado: null
+    titulo: null,
+    nombre: null,
+    tipoprestamo: null
   }
 
   Librosporexistencialist: any;
   Afiliadolist: any;
   Tipoprestamolist: any; 
-  Estadolist: any;
   constructor(private Data: DataService) { }
 
   ngOnInit(): void {
     this.getDropListLibrosporexistencia();
     this.getDropListAfiliado();
     this.getDropListTipoprestamo();
-    this.getDropListEstado();
     this.getUser();
   }
 
   getUser() {
     this.Data.getAll('/prestamo')
       .subscribe({
-        next: (res) => {
+        next: (res) => {  
           this.TUser = res;
         },
         error: (err) => console.error(err)
@@ -49,8 +50,17 @@ export class PrestamoComponent implements OnInit {
   }
 
   AgregarValor() {
-    delete this.user.cod_prestamo;
-    this.Data.save(this.user, '/prestamo')
+    const prestamoData = {
+      cod_existencia: this.user.cod_existencia,
+      cod_afiliado: this.user.cod_afiliado,
+      fechaprestamo: this.user.fechaprestamo,
+      horaprestamo: this.user.horaprestamo,
+      fechaentrega: this.user.fechaentrega,
+      horaentrega: this.user.horaentrega,
+      cod_tipoprestamo: this.user.cod_tipoprestamo,
+    };
+
+    this.Data.save(prestamoData, '/prestamo')
       .subscribe({
         next: (res) => {
           this.getUser();
@@ -86,12 +96,5 @@ export class PrestamoComponent implements OnInit {
       this.Tipoprestamolist=data;
     })
   }
-
-  getDropListEstado() {
-    this.Data.getDropListEstado().subscribe((data:any)=>{
-      this.Estadolist=data;
-    })
-  }
-
 
 }

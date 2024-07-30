@@ -38,8 +38,8 @@
 
                 <div class="form-group">
                     <label for="" class="control-label" hidden>Registro No.</label>
-                    <input type="text" readonly="readonly" [(ngModel)]="user.cod_libro" name="cod_libro" placeholder="No"
-                        class="form-control" required hidden>
+                    <input type="text" readonly="readonly" [(ngModel)]="user.cod_libro" name="cod_libro"
+                        placeholder="No" class="form-control" required hidden>
                 </div>
 
                 <div class="form-group">
@@ -54,31 +54,35 @@
                         class="form-control" autofocus>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-2">
                     <option>SELECCIONE LA EDITORIAL</option>
-                <select class="form-control" size="1" [(ngModel)]="user.cod_editorial" name="cod_editorial" required>
-                     <option *ngFor="let lista of Editoriallist" value={{lista.cod_editorial}}>{{lista.editorial}}</option>
-                </select>
-                </div>
-
-                <div class="form-group">
-                    <option>SELECCIONE EL PAIS</option>
-                  <select class="form-control" size="1" [(ngModel)]="user.cod_pais" name="cod_pais" required>
-                         <option *ngFor="let lista of Paislist" value={{lista.cod_pais}}>{{lista.pais}}</option>
+                    <select class="form-control" size="1" [(ngModel)]="user.cod_editorial" name="cod_editorial"
+                        required>
+                        <option *ngFor="let lista of Editoriallist" value={{lista.cod_editorial}}>{{lista.editorial}}
+                        </option>
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-2">
+                    <option>SELECCIONE EL PAIS</option>
+                    <select class="form-control" size="1" [(ngModel)]="user.cod_pais" name="cod_pais" required>
+                        <option *ngFor="let lista of Paislist" value={{lista.cod_pais}}>{{lista.pais}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group mt-2">
                     <option>SELECCIONE EL TIPO DE LIBRO</option>
-                  <select class="form-control" size="1" [(ngModel)]="user.cod_tipolibro" name="cod_tipolibro" required>
-                         <option *ngFor="let lista of Tipolibrolist" value={{lista.cod_tipolibro}}>{{lista.tipo}}</option>
+                    <select class="form-control" size="1" [(ngModel)]="user.cod_tipolibro" name="cod_tipolibro"
+                        required>
+                        <option *ngFor="let lista of Tipolibrolist" value={{lista.cod_tipolibro}}>{{lista.tipo}}
+                        </option>
                     </select>
                 </div>
 
                 <div class="form-group mt-2">
                     <label for="" class="control-label">LANZAMIENTO</label>
-                    <input type="text" [(ngModel)]="user.fechalanzamiento" name="fechalanzamiento" placeholder="DIGITE EL AÑO DE LANZAMIENTO"
-                        class="form-control" autofocus>
+                    <input type="text" [(ngModel)]="user.fechalanzamiento" name="fechalanzamiento"
+                        placeholder="DIGITE EL AÑO DE LANZAMIENTO" class="form-control" autofocus>
                 </div>
 
                 <div class="form-group mt-2">
@@ -86,10 +90,6 @@
                     <input type="text" [(ngModel)]="user.edicion" name="edicion" placeholder="DIGITE LA EDICION"
                         class="form-control" autofocus>
                 </div>
-
-
-
-                <br>
 
                 <button type="submit" class="btn btn-primary mt-3" formnovalidate value="Save">
                     Agregar
@@ -101,8 +101,9 @@
 </div>
 <br>
 <div class="form-group">
-    <input type="text" class="form-control" name="filterPost" placeholder="Digite el nombre que desea buscar" [(ngModel)]="filterPost">
-  </div>
+    <input type="text" class="form-control" name="filterPost" placeholder="Digite el nombre que desea buscar"
+        [(ngModel)]="filterPost">
+</div>
 
 <div class="container">
     <div class="row mt-25">
@@ -125,9 +126,9 @@
                     <td>{{User.cod_libro}}</td>
                     <td>{{User.ISBN}}</td>
                     <td>{{User.titulo}}</td>
-                    <td>{{User.cod_editorial}}</td>
-                    <td>{{User.cod_pais}}</td>
-                    <td>{{User.cod_tipolibro}}</td>
+                    <td>{{User.editorial}}</td>
+                    <td>{{User.pais}}</td>
+                    <td>{{User.tipo}}</td>
                     <td>{{User.fechalanzamiento}}</td>
                     <td>{{User.edicion}}</td>
                     <td>

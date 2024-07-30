@@ -16,6 +16,8 @@ export class LibrosporareaComponent implements OnInit {
     cod_libroarea: null,
     cod_libro: null,
     cod_area: null,
+    titulo: null,
+    area: null
   }
 
   Librolist: any;
@@ -39,8 +41,12 @@ export class LibrosporareaComponent implements OnInit {
   }
 
   AgregarValor() {
-    delete this.user.cod_libroarea;
-    this.Data.save(this.user, '/librosporarea')
+    const librosporareaData = {
+      cod_libro: this.user.cod_libro,
+      cod_area: this.user.cod_area,
+    };
+
+    this.Data.save(librosporareaData, '/librosporarea')
       .subscribe({
         next: (res) => {
           this.getUser();

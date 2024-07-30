@@ -12,11 +12,11 @@ export class LibrosporexistenciaComponent implements OnInit {
   @ViewChild('htmlData') htmlData!: ElementRef;
   filterPost = '';
 
-
   TUser: any = [];
   user: librosporexistencia = {
     cod_existencia: null,
     cod_libro: null,
+    titulo: null
   }
 
   Librolist: any;
@@ -28,7 +28,7 @@ export class LibrosporexistenciaComponent implements OnInit {
   }
 
   getUser() {
-    this.Data.getAll('/librosporexistencia?sort=cod_existencia')
+    this.Data.getAll('/librosporexistencia')
       .subscribe({
         next: (res) => {
           this.TUser = res;
@@ -38,8 +38,12 @@ export class LibrosporexistenciaComponent implements OnInit {
   }
 
   AgregarValor() {
-    delete this.user.cod_existencia;
-    this.Data.save(this.user, '/librosporexistencia')
+    const librosporexistenciaData = {
+      cod_existencia: this.user.cod_existencia,
+      cod_libro: this.user.cod_libro,
+    };
+
+    this.Data.save(librosporexistenciaData, '/librosporexistencia')
       .subscribe({
         next: (res) => {
           this.getUser();
