@@ -101,14 +101,11 @@ CREATE TABLE prestamo (
     fechaentrega VARCHAR(10),
     horaentrega VARCHAR(10),
     cod_tipoprestamo CHAR(1),
-    cod_estado INT(1),
     FOREIGN KEY (cod_existencia) REFERENCES librosporexistencia(cod_existencia)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (cod_afiliado) REFERENCES afiliado(cod_afiliado)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (cod_tipoprestamo) REFERENCES tipoprestamo(cod_tipoprestamo)
-        ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (cod_estado) REFERENCES estado(cod_estado)
         ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -202,12 +199,12 @@ INSERT INTO librosporexistencia (cod_libro) VALUES
 (4),
 (5);
 
-INSERT INTO prestamo (cod_existencia, cod_afiliado, fechaprestamo, horaprestamo, fechaentrega, horaentrega, cod_tipoprestamo, cod_estado) VALUES
-(1, 1, '2024-07-01', '10:00', '2024-07-10', '12:00', 'A', 2),
-(2, 2, '2024-07-02', '11:00', '2024-07-15', '13:00', 'B', 2),
-(3, 3, '2024-07-03', '12:00', '2024-07-20', '14:00', 'A', 2),
-(4, 4, '2024-07-04', '13:00', '2024-07-25', '15:00', 'B', 2),
-(5, 5, '2024-07-05', '14:00', '2024-08-01', '16:00', 'A', 2);
+INSERT INTO prestamo (cod_existencia, cod_afiliado, fechaprestamo, horaprestamo, fechaentrega, horaentrega, cod_tipoprestamo) VALUES
+(1, 1, '2024-07-01', '10:00', '2024-07-10', '12:00', 'A'),
+(2, 2, '2024-07-02', '11:00', '2024-07-15', '13:00', 'B'),
+(3, 3, '2024-07-03', '12:00', '2024-07-20', '14:00', 'A'),
+(4, 4, '2024-07-04', '13:00', '2024-07-25', '15:00', 'B'),
+(5, 5, '2024-07-05', '14:00', '2024-08-01', '16:00', 'A');
 
 INSERT INTO estadoporexistencia (cod_existencia, cod_estado) VALUES
 (1, 2),
@@ -215,5 +212,3 @@ INSERT INTO estadoporexistencia (cod_existencia, cod_estado) VALUES
 (3, 2),
 (4, 2),
 (5, 2);
-
-use biblioteca;
