@@ -9,7 +9,7 @@ export class FilterlibrosporautorPipe implements PipeTransform {
     if (arg === '' || arg.length < 1) return value;
     const resultPosts = [];
     for (const post of value) {
-      if (post.cod_libroautor.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
+      if (post.titulo.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         resultPosts.push(post);
       };
     };

@@ -9,7 +9,7 @@ export class FilterprestamoPipe implements PipeTransform {
     if (arg === '' || arg.length < 1) return value;
     const resultPosts = [];
     for (const post of value) {
-      if (post.cod_prestamo.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
+      if (post.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         resultPosts.push(post);
       };
     };
