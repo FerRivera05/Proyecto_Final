@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { estado, estadoporexistencia } from 'src/app/interfaces/user';
+import { estadoporexistencia } from 'src/app/interfaces/user';
 import { DataService } from '../../services/data.service';
 import { ViewChild, ElementRef } from '@angular/core';
 
@@ -11,7 +11,6 @@ import { ViewChild, ElementRef } from '@angular/core';
 export class EstadoporexistenciaComponent implements OnInit {
   @ViewChild('htmlData') htmlData!: ElementRef;
   filterPost = '';
-
 
   TUser: any = [];
   user: estadoporexistencia = {
@@ -43,8 +42,12 @@ export class EstadoporexistenciaComponent implements OnInit {
   }
 
   AgregarValor() {
-    delete this.user.cod_estadoexistencia;
-    this.Data.save(this.user, '/estadoporexistencia')
+    const estadoporexistencia = {
+      cod_estado: this.user.cod_estado,
+      cod_existencia: this.user.cod_existencia,
+    };
+
+    this.Data.save(estadoporexistencia, '/estadoporexistencia')
       .subscribe({
         next: (res) => {
           this.getUser();

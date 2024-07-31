@@ -56,6 +56,10 @@ import { FilterprestamoPipe } from './pipes/filterprestamo.pipe';
 import { FiltertipolibroPipe } from './pipes/filtertipolibro.pipe';
 import { FiltertipoprestamoPipe } from './pipes/filtertipoprestamo.pipe';
 import { FilterestadoporexistenciaPipe } from './pipes/filterestadoporexistencia.pipe';
+import { LibroReporteComponent } from './components/libro-reporte/libro-reporte.component';
+import { PrestamoReporteComponent } from './components/prestamo-reporte/prestamo-reporte.component';
+import { AfiliadoReporteComponent } from './components/afiliado-reporte/afiliado-reporte.component';
+import { EstadoporexistenciaReporteComponent } from './components/estadoporexistencia-reporte/estadoporexistencia-reporte.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +98,6 @@ import { FilterestadoporexistenciaPipe } from './pipes/filterestadoporexistencia
     FilterautorPipe,
     FiltereditorialPipe,
     FilterestadoPipe,
-    
     FilterlibroPipe,
     FilterlibrosporareaPipe,
     FilterlibrosporautorPipe,
@@ -104,6 +107,10 @@ import { FilterestadoporexistenciaPipe } from './pipes/filterestadoporexistencia
     FiltertipolibroPipe,
     FiltertipoprestamoPipe,
     FilterestadoporexistenciaPipe,
+    LibroReporteComponent,
+    PrestamoReporteComponent,
+    AfiliadoReporteComponent,
+    EstadoporexistenciaReporteComponent,
   ],
   imports: [
     BrowserModule,

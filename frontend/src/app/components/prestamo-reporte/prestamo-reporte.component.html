@@ -1,0 +1,50 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand ps-3">REPORTE DE PRESTAMOS</a>
+</nav>
+
+<div class="agregar_contenedor"></div>
+<div class="row mt-5">
+    <div class="card">
+        <div class="card-body">
+            <button (click)="exportToExcel()" class="btn btn-success">
+                Exportar a Excel
+            </button>
+            <button class="btn btn-danger ms-3" (click)="openPDF()">
+                Exportar a PDF
+            </button>`
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="container">
+    <div class="row mt-25">
+        <table class="table table-borbered table-hover" id="tabla">
+            <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>EXISTENCIA</th>
+                    <th>AFILIADO</th>
+                    <th>FECHA PRESTAMO</th>
+                    <th>HORA PRESTAMO</th>
+                    <th>FECHA ENTREGA</th>
+                    <th>HORA ENTREGA</th>
+                    <th>TIPO</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let User of TUser">
+                    <td>{{User.cod_prestamo}}</td>
+                    <td>{{User.titulo}}</td>
+                    <td>{{User.nombre}}</td>
+                    <td>{{User.fechaprestamo}}</td>
+                    <td>{{User.horaentrega}}</td>
+                    <td>{{User.fechaentrega}}</td>
+                    <td>{{User.horaentrega}}</td>
+                    <td>{{User.tipoprestamo}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

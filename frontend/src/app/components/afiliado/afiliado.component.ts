@@ -12,7 +12,6 @@ export class AfiliadoComponent implements OnInit {
   @ViewChild('htmlData') htmlData!: ElementRef;
   filterPost = '';
 
-  
   TUser: any = [];
   user: afiliado = {
     cod_afiliado: null,

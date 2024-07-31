@@ -30,13 +30,12 @@ import { PrestamoEditComponent } from './components/prestamo-edit/prestamo-edit.
 import { EstadoporexistenciaComponent } from './components/estadoporexistencia/estadoporexistencia.component';
 import { EstadoporexistenciaEditComponent } from './components/estadoporexistencia-edit/estadoporexistencia-edit.component';
 import { NavegacionComponent } from './components/navegacion/navegacion.component';
+import { LibroReporteComponent } from './components/libro-reporte/libro-reporte.component';
+import { PrestamoReporteComponent } from './components/prestamo-reporte/prestamo-reporte.component';
+import { AfiliadoReporteComponent } from './components/afiliado-reporte/afiliado-reporte.component';
+import { EstadoporexistenciaReporteComponent } from './components/estadoporexistencia-reporte/estadoporexistencia-reporte.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/navegacion',
-    pathMatch: 'full'
-  },
   {
     path: 'editorial',
     component: EditorialComponent
@@ -68,6 +67,10 @@ const routes: Routes = [
   {
     path: 'libro/edit/:id',
     component: LibroEditComponent
+  },
+  {
+    path: 'libro/reporte',
+    component: LibroReporteComponent
   },
   {
     path: 'area',
@@ -110,6 +113,10 @@ const routes: Routes = [
     component: AfiliadoEditComponent
   },
   {
+    path: 'afiliado/reporte',
+    component: AfiliadoReporteComponent
+  },
+  {
     path: 'tipoprestamo',
     component: TipoprestamoComponent
   },
@@ -142,6 +149,10 @@ const routes: Routes = [
     component: PrestamoEditComponent
   },
   {
+    path: 'prestamo/reporte',
+    component: PrestamoReporteComponent
+  },
+  {
     path: 'estadoporexistencia',
     component: EstadoporexistenciaComponent
   },
@@ -150,11 +161,12 @@ const routes: Routes = [
     component: EstadoporexistenciaEditComponent
   },
   {
-    path: 'navegacion',
-    component: NavegacionComponent
+    path: 'estadoporexistencia/reporte',
+    component: EstadoporexistenciaReporteComponent
   },
   {
-    path: '**', redirectTo: '/navegacion'
+    path: 'navegacion',
+    component: NavegacionComponent
   },
 ];
 
