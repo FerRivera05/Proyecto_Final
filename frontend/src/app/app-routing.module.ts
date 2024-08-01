@@ -34,8 +34,25 @@ import { LibroReporteComponent } from './components/libro-reporte/libro-reporte.
 import { PrestamoReporteComponent } from './components/prestamo-reporte/prestamo-reporte.component';
 import { AfiliadoReporteComponent } from './components/afiliado-reporte/afiliado-reporte.component';
 import { EstadoporexistenciaReporteComponent } from './components/estadoporexistencia-reporte/estadoporexistencia-reporte.component';
+import { LoginComponent } from './components/login/login.component';
+import { LibrosporafiliadoComponent } from './components/librosporafiliado/librosporafiliado.component';
+import { LibrosporfechaComponent } from './components/librosporfecha/librosporfecha.component';
+import { ConsultaAfiliadoComponent } from './components/consulta-afiliado/consulta-afiliado.component';
 
 const routes: Routes = [
+  {
+    path: "login",
+    component: LoginComponent
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'navegacion',
+    component: NavegacionComponent,
+  },
   {
     path: 'editorial',
     component: EditorialComponent
@@ -168,6 +185,22 @@ const routes: Routes = [
     path: 'navegacion',
     component: NavegacionComponent
   },
+  {
+    path: 'prestamo/librosporafiliado/consulta',
+    component: LibrosporafiliadoComponent
+  },
+  {
+    path: 'prestamo/librosporfecha/consulta',
+    component: LibrosporfechaComponent
+  },
+  {
+    path: 'afiliado/consulta',
+    component: ConsultaAfiliadoComponent
+  },
+  {
+    path: '**',
+    component: LoginComponent
+  }
 ];
 
 @NgModule({

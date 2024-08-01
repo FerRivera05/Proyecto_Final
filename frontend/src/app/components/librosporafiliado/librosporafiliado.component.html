@@ -41,51 +41,72 @@
     </div>
 </nav>
 
-<nav class="navbar navbar-dark bg-dark">
-    <a href="/" class="navbar-brand ps-3">REPORTE DE AFILIADOS</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <button mat-button [matMenuTriggerFor]="menu1">CATÁLOGO DE LIBROS</button>
+
+        <mat-menu #menu1="matMenu">
+            <a mat-menu-item href="/editorial">EDITORIALES</a>
+            <a mat-menu-item href="/pais">PAISES</a>
+            <a mat-menu-item href="/tipolibro">TIPOS DE LIBRO</a>
+            <a mat-menu-item href="/libro">LIBRO</a>
+            <a mat-menu-item href="/area">AREA</a>
+            <a mat-menu-item href="/autor">AUTOR</a>
+            <a mat-menu-item href="/librosporarea">LIBROS POR AREA</a>
+            <a mat-menu-item href="/librosporautor">LIBROS POR AUTOR</a>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="menu2">GESTIÓN DE AFILIADOS Y PRESTAMOS</button>
+
+        <mat-menu #menu2="matMenu">
+            <a mat-menu-item href="/afiliado">AFILIADO</a>
+            <a mat-menu-item href="/tipoprestamo">TIPO DE PRESTAMO</a>
+            <a mat-menu-item href="/estado">ESTADO</a>
+            <a mat-menu-item href="/librosporexistencia">LIBROS POR EXISTENCIA</a>
+            <a mat-menu-item href="/prestamo">PRESTAMO</a>
+            <a mat-menu-item href="/estadoporexistencia">ESTADOS POR EXISTENCIA</a>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="menu3">CONSULTAS</button>
+
+        <mat-menu #menu3="matMenu">
+            <a mat-menu-item href="/consulta-afiliado">AFILIADO</a>
+            <a mat-menu-item href="/librosporafiliado">LIBROS PRESTADOS POR CLIENTES</a>
+            <a mat-menu-item href="/librosporfecha">LIBROS PRESTADOS POR FECHA</a>
+        </mat-menu>
+    </div>
 </nav>
 
-<div class="agregar_contenedor"></div>
-<div class="row mt-5">
-    <div class="card">
-        <div class="card-body">
-            <button (click)="exportToExcel()" class="btn btn-success">
-                Exportar a Excel
-            </button>
-            <button class="btn btn-danger ms-3" (click)="openPDF()">
-                Exportar a PDF
-            </button>`
-        </div>
-    </div>
-</div>
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand ps-3">LIBROS PRESTADOS POR AFILIADO</a>
+</nav>
+
 <br>
+
+<div class="form-group">
+    <input type="text" class="form-control" name="filterPost" placeholder="Digite el Afiliado del prestamo que desea buscar" [(ngModel)]="filterPost">
+  </div>
 
 <div class="container">
     <div class="row mt-25">
-        <table class="table table-borbered table-hover" id="tabla">
+        <table class="table table-borbered table-hover">
             <thead>
                 <tr>
                     <th>NO</th>
-                    <th>NOMBRE</th>
+                    <th>LIBRO</th>
+                    <th>AFILIADO</th>
                     <th>1ER APELLIDO</th>
-                    <th>2DO APELLIDO</th>
-                    <th>DOCUMENTO</th>
-                    <th>NACIMIENTO</th>
-                    <th>TELEFONO</th>
-                    <th>DIRECCION</th>
+                    <th>TIPO DE PRESTAMO</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr *ngFor="let User of TUser">
-                    <td>{{User.cod_afiliado}}</td>
+                <tr *ngFor="let User of TUser | filterlibrosporafiliado:filterPost">
+                    <td>{{User.cod_prestamo}}</td>
+                    <td>{{User.titulo}}</td>
                     <td>{{User.nombre}}</td>
                     <td>{{User.apellido1}}</td>
-                    <td>{{User.apellido2}}</td>
-                    <td>{{User.documento}}</td>
-                    <td>{{User.fechanacimiento}}</td>
-                    <td>{{User.telefono}}</td>
-                    <td>{{User.direccion}}</td>
+                    <td>{{User.tipoprestamo}}</td>
                 </tr>
             </tbody>
         </table>

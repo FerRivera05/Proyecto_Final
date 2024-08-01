@@ -60,6 +60,12 @@ import { LibroReporteComponent } from './components/libro-reporte/libro-reporte.
 import { PrestamoReporteComponent } from './components/prestamo-reporte/prestamo-reporte.component';
 import { AfiliadoReporteComponent } from './components/afiliado-reporte/afiliado-reporte.component';
 import { EstadoporexistenciaReporteComponent } from './components/estadoporexistencia-reporte/estadoporexistencia-reporte.component';
+import { LoginComponent } from './components/login/login.component';
+import { LibrosporafiliadoComponent } from './components/librosporafiliado/librosporafiliado.component';
+import { LibrosporfechaComponent } from './components/librosporfecha/librosporfecha.component';
+import { ConsultaAfiliadoComponent } from './components/consulta-afiliado/consulta-afiliado.component';
+import { FilterlibrosporafiliadoPipe } from './pipes/filterlibrosporafiliado.pipe';
+import { FilterlibrosporfechaPipe } from './pipes/filterlibrosporfecha.pipe';
 
 @NgModule({
   declarations: [
@@ -111,6 +117,12 @@ import { EstadoporexistenciaReporteComponent } from './components/estadoporexist
     PrestamoReporteComponent,
     AfiliadoReporteComponent,
     EstadoporexistenciaReporteComponent,
+    LoginComponent,
+    LibrosporafiliadoComponent,
+    LibrosporfechaComponent,
+    ConsultaAfiliadoComponent,
+    FilterlibrosporafiliadoPipe,
+    FilterlibrosporfechaPipe,
   ],
   imports: [
     BrowserModule,

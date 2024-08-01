@@ -42,50 +42,39 @@
 </nav>
 
 <nav class="navbar navbar-dark bg-dark">
-    <a href="/" class="navbar-brand ps-3">REPORTE DE AFILIADOS</a>
+    <a href="/" class="navbar-brand ps-3">LIBROS PRESTADOS POR FECHA</a>
 </nav>
 
-<div class="agregar_contenedor"></div>
-<div class="row mt-5">
-    <div class="card">
-        <div class="card-body">
-            <button (click)="exportToExcel()" class="btn btn-success">
-                Exportar a Excel
-            </button>
-            <button class="btn btn-danger ms-3" (click)="openPDF()">
-                Exportar a PDF
-            </button>`
-        </div>
-    </div>
-</div>
 <br>
+
+<div class="form-group">
+    <input type="text" class="form-control" name="filterPost" placeholder="Digite la Fecha del prestamo que desea buscar" [(ngModel)]="filterPost">
+  </div>
 
 <div class="container">
     <div class="row mt-25">
-        <table class="table table-borbered table-hover" id="tabla">
+        <table class="table table-borbered table-hover">
             <thead>
                 <tr>
                     <th>NO</th>
-                    <th>NOMBRE</th>
-                    <th>1ER APELLIDO</th>
-                    <th>2DO APELLIDO</th>
-                    <th>DOCUMENTO</th>
-                    <th>NACIMIENTO</th>
-                    <th>TELEFONO</th>
-                    <th>DIRECCION</th>
+                    <th>LIBRO</th>
+                    <th>FECHA PRESTAMO</th>
+                    <th>HORA PRESTAMO</th>
+                    <th>FECHA ENTREGA</th>
+                    <th>HORA ENTREGA</th>
+                    <th>TIPO DE PRESTAMO</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr *ngFor="let User of TUser">
-                    <td>{{User.cod_afiliado}}</td>
-                    <td>{{User.nombre}}</td>
-                    <td>{{User.apellido1}}</td>
-                    <td>{{User.apellido2}}</td>
-                    <td>{{User.documento}}</td>
-                    <td>{{User.fechanacimiento}}</td>
-                    <td>{{User.telefono}}</td>
-                    <td>{{User.direccion}}</td>
+                <tr *ngFor="let User of TUser | filterlibrosporfecha:filterPost">
+                    <td>{{User.cod_prestamo}}</td>
+                    <td>{{User.titulo}}</td>
+                    <td>{{User.fechaprestamo}}</td>
+                    <td>{{User.horaprestamo}}</td>
+                    <td>{{User.fechaentrega}}</td>
+                    <td>{{User.horaentrega}}</td>
+                    <td>{{User.tipoprestamo}}</td>
                 </tr>
             </tbody>
         </table>
